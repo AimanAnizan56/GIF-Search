@@ -4,6 +4,7 @@
             type="text"
             class="
                 block
+                text-gray-700
                 border border-gray-500
                 w-full
                 md:text-2xl
