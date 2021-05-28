@@ -15,9 +15,11 @@
                 focus:outline-none
                 focus:ring focus:ring-blue-200
             "
+            :placeholder="placeholder"
         />
 
         <Button
+            @click="searchGIF"
             text="Search"
             class="my-5 md:text-xl border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white"
         />
@@ -31,6 +33,20 @@ export default {
     name: "InputBox",
     components: {
         Button,
+    },
+    props: {
+        placeholder: {
+            type: String,
+            default: "",
+        },
+    },
+    data() {
+        return {};
+    },
+    methods: {
+        searchGIF() {
+            console.log(this.placeHolder);
+        },
     },
 };
 </script>

@@ -3,7 +3,7 @@
         <Header />
         <div class="flex flex-col lg:flex-row lg-flex-1">
             <Hero />
-            <InputBox />
+            <InputBox placeholder="Type keyword" />
         </div>
     </div>
 </template>
