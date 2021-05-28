@@ -2,6 +2,7 @@
     <div class="my-10 lg:w-full lg:mt-32 mx-10 p-3 flex flex-col items-center justify-center">
         <input
             type="text"
+            v-model="searchInput"
             class="
                 block
                 text-gray-700
@@ -17,7 +18,6 @@
             "
             :placeholder="placeholder"
         />
-
         <Button
             @click="searchGIF"
             text="Search"
@@ -51,11 +51,13 @@ export default {
         },
     },
     data() {
-        return {};
+        return {
+            searchInput: "",
+        };
     },
     methods: {
         searchGIF() {
-            console.log("clicked");
+            console.log("search: " + this.searchInput);
         },
     },
 };
