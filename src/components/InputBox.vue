@@ -3,6 +3,7 @@
         <input
             type="text"
             v-model="searchInput"
+            @keyup.enter="searchGIF"
             class="
                 block
                 text-gray-700
@@ -53,11 +54,22 @@ export default {
     data() {
         return {
             searchInput: "",
+            offset: 0,
         };
     },
     methods: {
-        searchGIF() {
-            console.log("search: " + this.searchInput);
+        async searchGIF() {
+            this.offset = 0;
+
+            let API_key = "Q0mxSRk57mH7GxZnjGXM5oUKBKdUWraQ";
+            let URL =
+                "https://api.giphy.com/v1/gifs/search?api_key=".concat(API_key) +
+                "&q=".concat(this.searchInput.trim()) +
+                "&limit=25&offset=".concat(this.offset);
+
+            const res = await fetch(URL);
+            const results = await res.json();
+            console.log(results);
         },
     },
 };
