@@ -12,6 +12,14 @@ export default {
             type: String,
             default: " ",
         },
+        priColor: {
+            type: String,
+            default: "white",
+        },
+        secColor: {
+            type: String,
+            default: "black",
+        },
     },
 };
 </script>

@@ -21,7 +21,17 @@
         <Button
             @click="searchGIF"
             text="Search"
-            class="my-5 md:text-xl border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white"
+            class="
+                my-5
+                md:text-xl
+                border-white
+                text-white
+                bg-blue-400
+                hover:bg-blue-600
+                active:bg-blue-400
+                transform
+                active:scale-90
+            "
         />
     </div>
 </template>
@@ -45,7 +55,7 @@ export default {
     },
     methods: {
         searchGIF() {
-            console.log(this.placeHolder);
+            console.log("clicked");
         },
     },
 };
