@@ -38,39 +38,44 @@
 </template>
 
 <script>
-import Button from "./Button.vue";
+    import Button from './Button.vue';
 
-export default {
-    name: "InputBox",
-    components: {
-        Button,
-    },
-    props: {
-        placeholder: {
-            type: String,
-            default: "",
+    export default {
+        name: 'InputBox',
+        components: {
+            Button,
         },
-    },
-    data() {
-        return {
-            searchInput: "",
-            offset: 0,
-        };
-    },
-    methods: {
-        async searchGIF() {
-            this.offset = 0;
-
-            let API_key = "Q0mxSRk57mH7GxZnjGXM5oUKBKdUWraQ";
-            let URL =
-                "https://api.giphy.com/v1/gifs/search?api_key=".concat(API_key) +
-                "&q=".concat(this.searchInput.trim()) +
-                "&limit=25&offset=".concat(this.offset);
-
-            const res = await fetch(URL);
-            const results = await res.json();
-            console.log(results);
+        props: {
+            placeholder: {
+                type: String,
+                default: '',
+            },
         },
-    },
-};
+        data() {
+            return {
+                searchInput: '',
+                offset: 0,
+            };
+        },
+        methods: {
+            async searchGIF() {
+                this.offset = 0;
+
+                if (this.searchInput.trim() != '') {
+                    let API_key = 'Q0mxSRk57mH7GxZnjGXM5oUKBKdUWraQ';
+                    let URL =
+                        'https://api.giphy.com/v1/gifs/search?api_key='.concat(API_key) +
+                        '&q='.concat(this.searchInput.trim()) +
+                        '&limit=10&offset='.concat(this.offset);
+
+                    console.log(URL);
+                    const res = await fetch(URL);
+                    const results = await res.json();
+                    console.log(results);
+                } else {
+                    console.log('input something');
+                }
+            },
+        },
+    };
 </script>
