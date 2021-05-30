@@ -5,21 +5,13 @@
 </template>
 
 <script>
-export default {
-    name: "Button",
-    props: {
-        text: {
-            type: String,
-            default: " ",
+    export default {
+        name: 'Button',
+        props: {
+            text: {
+                type: String,
+                default: ' ',
+            },
         },
-        priColor: {
-            type: String,
-            default: "white",
-        },
-        secColor: {
-            type: String,
-            default: "black",
-        },
-    },
-};
+    };
 </script>
